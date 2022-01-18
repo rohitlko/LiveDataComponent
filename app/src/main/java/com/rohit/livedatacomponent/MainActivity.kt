@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     private val btnUpdate: Button
         get() = findViewById(R.id.buttonUpdate)
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.factLiveData.observe(this, Observer {
             // code execute when ther is any chnage in the live data
             textFact.text = it
-
         })
 
         btnUpdate.setOnClickListener {

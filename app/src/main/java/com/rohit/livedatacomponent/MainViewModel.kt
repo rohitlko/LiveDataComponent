@@ -1,13 +1,17 @@
 package com.rohit.livedatacomponent
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainViewModel: ViewModel() {
+class MainViewModel : ViewModel() {
 
-    val factLiveData = MutableLiveData<String>("This is a fact")
+    private val factLiveDataObject = MutableLiveData<String>("This is a fact")
 
-     fun updateLiveDataOnClick(){
-         factLiveData.value = "This a a new fact"
-     }
+    val factLiveData: LiveData<String>
+        get() = factLiveDataObject
+
+    fun updateLiveDataOnClick() {
+        factLiveDataObject.value = "This a new fact"
+    }
 }
